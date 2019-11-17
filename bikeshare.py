@@ -63,6 +63,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     
+    // Get the system time and assign it to the variable start_time
     start_time = time.time()
 
     # load data file into a dataframe
@@ -136,7 +137,7 @@ def station_stats(df):
     
     print('\n The Most popular trip was from {}\n'.format(Combination_Station))
     
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time))// Calculate time spent be substracting the currnet time from the system time  that ws noted earlier.
     
     print('-'*40)
 
@@ -200,7 +201,8 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def display_data(df):    
+def display_data(df):
+    // Here, the counts are being initialized    
     count = 0
     user_input = input('\nDo you want to see 5 lines of raw data? Enter yes or no.\n').lower() 
     while True :
