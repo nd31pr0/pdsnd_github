@@ -5,20 +5,12 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-
+// The following are the funcstions built to answer some questions based on the bikeshare data.
 def get_filters():
-    """
-    Asks user to specify a city, month, and day to analyze.
-
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    """
+    
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input("\nWhat city do you intend to filter by? New York City, Chicago or Washington?\n").lower()
-    ### The following checks will ensure that the user inputs one of the expected cities.
     while(True):
         if(city == 'chicago' or city == 'new york city' or city == 'washington' or city == 'all'):
             break
@@ -28,7 +20,6 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('\nWhich or the following months will you want to filter by? January, February, March, April, May, or June?\n').lower()
     
-    # Here we validate user input for month to ensure that it is one of the expected values.
     while(True):
         if(month == 'january' or month == 'february' or month == 'march' or month == 'april' or month == 'may' or month == 'june' or month == 'all'):
             break
@@ -70,7 +61,6 @@ def load_data(city, month, day):
 
     df['Start Time'] = pd.to_datetime(df['Start Time'], errors='coerce')
 
-    # extract month, day of week and hour from Start Time to create new columns
     
     # Months will take values from 1 through 12
     df['month'] = df['Start Time'].dt.month  
@@ -136,7 +126,7 @@ def station_stats(df):
     
     print('\n The Most popular trip was from {}\n'.format(Combination_Station))
     
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time.time() - start_time))// Calculate time spent be substracting the currnet time from the system time  that ws noted earlier.
     
     print('-'*40)
 
@@ -200,7 +190,8 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def display_data(df):    
+def display_data(df):
+    // Here, the counts are being initialized    
     count = 0
     user_input = input('\nDo you want to see 5 lines of raw data? Enter yes or no.\n').lower() 
     while True :
