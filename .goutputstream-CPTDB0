@@ -1,0 +1,18 @@
+### Date created
+Include the date you created this project and README file.
+Saturday November 16 2019
+
+### Project Title
+Post your work on Github
+
+### Description
+This project teaches the basics of using Git. Git is for version control.
+The project analyzes bikeshare data between 
+### Files used
+bikeshare.py: This file contains the code to operate csv files. 
+
+
+
+### Credits
+It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+- https://udacity.github.io/git-styleguide/
